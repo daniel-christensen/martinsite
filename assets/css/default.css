@@ -1,0 +1,25 @@
+:root {
+    --colour-primary: #1d092c;
+    --colour-secondary: #ceb3e0;
+    --colour-accent: #00c9b0;
+    --colour-background: #f8f8f1;
+
+    --header-font-size: 20px;
+    --header-logo-size: 52px;
+    --header-social-logo-size: 38px;
+
+    --page-container-size: 850px;
+}
+
+html {
+    background-color: var(--colour-background)
+}
+
+/* Athletics,Arial,sans-serif */
+/* Lostamasta,Georgia,sans-serif */
+
+/* https://fonts.google.com/specimen/Shadows+Into+Light */
+/* https://fonts.google.com/specimen/Poppins */
+
+/* https://colorhunt.co/ */
+/* https://mycolor.space/?hex=%231D092C&sub=1 */

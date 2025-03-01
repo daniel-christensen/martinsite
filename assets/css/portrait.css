@@ -1,0 +1,82 @@
+.full-width-portrait {
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.full-width-portrait .portrait-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.full-width-portrait .portrait-layout .left-section {
+    display: flex;
+    justify-content: center;
+}
+
+.full-width-portrait .portrait-layout .left-section img {
+    width: 380px;
+    box-shadow: -40px -40px 0 0 var(--colour-primary);
+}
+
+.full-width-portrait .portrait-layout .right-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.full-width-portrait .portrait-layout .right-section .text-container {
+    max-width: 500px;
+}
+
+.full-width-portrait .portrait-layout .right-section .text-container h1 {
+    font-family: "Shadows Into Light", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 58px;
+}
+
+.full-width-portrait .portrait-layout .right-section .text-container p {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.full-width-portrait .portrait-layout .right-section .text-container button {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    margin-top: 18px;
+
+    outline: 0;
+    grid-gap: 8px;
+    align-items: center;
+    background: 0 0;
+    border: 1px solid var(--colour-primary);
+    border-radius: 0px;
+    cursor: pointer;
+    display: inline-flex;
+    flex-shrink: 0;
+    font-size: 16px;
+    gap: 8px;
+    justify-content: center;
+    line-height: 1.5;
+    overflow: hidden;
+    padding: 12px 16px;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    transition: all .14s ease-out;
+    white-space: nowrap;
+}
+
+.full-width-portrait .portrait-layout .right-section .text-container button:hover {
+    box-shadow: 4px 4px 0 var(--colour-primary);
+    transform: translate(-4px,-4px);
+}
+
+.full-width-portrait .portrait-layout .right-section .text-container button:focus-visible{
+    outline-offset: 1px;
+}
