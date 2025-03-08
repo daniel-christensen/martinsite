@@ -116,7 +116,7 @@ nav a {
     }
 
 .sec-splash {
-    background-image: url(/assets/images/splash-2.jpg);
+    background-image: url(../images/splash-2.jpg);
     background-size: cover;
     height: 100vh;
     display: flex;
@@ -246,7 +246,7 @@ nav a {
 .check-pair img {
     margin-right: 8px;
     width: 28px;
-    content: url("/assets/images/check.png");
+    content: url("../images/check.png");
 }
 
 /* .check-section .check-row .check-pair {
