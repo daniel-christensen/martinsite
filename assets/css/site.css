@@ -1,0 +1,264 @@
+:root {
+    /* Palette Origin: https://mycolor.space/?hex=%233B444B&sub=1 */
+    --colour-primary: #3b444b;
+    --colour-secondary: #88b0cd;
+    --colour-tertiary: #687987;
+    --colour-accent-dark: #543c4a;
+    --colour-accent-light: #866b7b;
+
+    /* #d4d3d1 */
+
+    /* Sizes */
+    --width-lg: 1400px;
+}
+
+body {
+    /* 
+    The footer colour, but main the default background colour too to create
+    a bleeding effect which causes the footer to extend to the bottom of the page
+    if the page is mostly empty. Rare to see but functionality is there if it happens.
+    */
+    background-color: var(--colour-accent-light);
+}
+
+.bg-white {
+    background-color: white;
+}
+
+.bg-primary {
+    background-color: var(--colour-primary);
+}
+
+.bg-secondary {
+    background-color: var(--colour-secondary);
+}
+
+.bg-tertiary {
+    background-color: var(--colour-tertiary);
+}
+
+.bg-accent-dark {
+    background-color: var(--colour-accent-dark);
+}
+
+.bg-accent-light {
+    background-color: var(--colour-accent-light);
+}
+
+.color-shade-1 {
+    color: #cdd8e0;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: var(--width-lg);
+}
+
+header {
+    background-color: var(--colour-primary);
+    /* height: 52px; */
+    box-shadow: 0px 0px 10px 0px black;
+}
+
+nav {
+    padding-left: 8px;
+    padding-right: 8px;
+
+    display: flex;
+    /* height: 100%; */
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: white;
+    border-radius: 32px;
+}
+
+nav a {
+    margin: 12px;
+    padding: 12px;
+
+    font-size: 1.05rem;
+    /* font-family: "Poppins", sans-serif; */
+    font-family: "Georgia", Sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+
+    color: black;
+    text-decoration: none;
+    /* text-transform: uppercase; */
+    position: relative;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+    nav a:hover {
+        transform: translateY(-3px);
+    }
+
+    nav a::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        bottom: -1px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background-color: var(--colour-tertiary);
+        transform: scaleY(0);
+        transform-origin: bottom;
+        transition: transform 0.3s ease;    
+    }
+
+    nav a:hover::before {
+        transform: scaleY(1);
+    }
+
+.sec-splash {
+    background-image: url(/assets/images/splash-2.jpg);
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sec-splash .top {
+    margin-bottom: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sec-splash h1 {
+    margin: 12px;
+
+    font-size: 3rem;
+    font-family: "Georgia", Sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    /* text-transform: uppercase; */
+    /* font-variation-settings: "wght" 550; */
+}
+
+
+.sec-intro-outer {
+    padding-top: 64px;
+    padding-bottom: 64px;
+
+    background-color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.sec-intro {
+    max-width: var(--width-lg);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.sec-intro .left {
+    margin-right: 128px;
+    /* padding: 48px; */
+    display: flex;
+    flex-direction: column;
+}
+
+.sec-intro .left h1 {
+    font-size: 5rem;
+    font-family: "Georgia", Sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.sec-intro .left p {
+    font-size: 1.4rem;
+    font-family: "Georgia", Sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+
+    align-self: flex-end;
+    max-width: 400px;
+}
+
+.sec-intro .right {
+    padding: 48px;
+    width: 50%;
+}
+
+.quote-box {
+    position: relative;
+    padding: 40px;
+}
+  
+    .quote-box::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-width: 10px;
+        border-style: solid;
+        border-color: var(--colour-accent-light);
+        clip-path: polygon(
+            /* Bottom left corner L shape */
+            0 calc(100% - 60px), 60px calc(100% - 60px), 60px 100%, 0 100%, 0 calc(100% - 60px),
+            
+            /* Top right corner L shape */
+            calc(100% - 60px) 0, 100% 0, 100% 60px, calc(100% - 60px) 60px, calc(100% - 60px) 0
+        );
+    }
+
+.check-section {
+    margin-top: 24px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    max-width: 480px;
+}
+
+.check-pair {
+    margin-top: 18px;
+    margin-bottom: 18px;
+
+    display: flex;
+    align-items: center;
+}
+
+.check-pair p {
+    font-size: 1.4rem;
+    font-family: "Georgia", Sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.check-pair img {
+    margin-right: 8px;
+    width: 28px;
+    content: url("/assets/images/check.png");
+}
+
+/* .check-section .check-row .check-pair {
+    padding-top: 12px;
+    padding-bottom: 12px;
+
+    display: flex;
+    align-items: center;
+}
+
+.check-section .check-row .check-pair img {
+    margin-right: 8px;
+    width: 28px;
+    content: url("/assets/images/check.png");
+} */
