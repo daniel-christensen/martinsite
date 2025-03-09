@@ -1,0 +1,137 @@
+:root {
+    /* Palette Origin: https://mycolor.space/?hex=%233B444B&sub=1 */
+    --colour-primary: #3b444b;
+    --colour-secondary: #88b0cd;
+    --colour-tertiary: #687987;
+    --colour-accent-dark: #543c4a;
+    --colour-accent-light: #866b7b;
+
+    /* TODO: Nice colour instead of white backgrounds. */
+    /* #d4d3d1 */
+
+    /* Sizes */
+    --width-lg: 1400px;
+
+    /* Break points */
+    --bp-mobile: 480px;
+    --bp-tablet: 768px;
+}
+
+html {
+    font-family: "Merriweather", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 300;
+    font-variation-settings: "wdth" 100;
+    font-size: 3rem;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+hr.solid {
+    border-top-width: 3px;
+    border-top-style: solid;
+    border-color: var(--colour-accent-light);
+    border-radius: 80px;
+    width: 100%;
+}
+
+.full-screen-container {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.opacity-layer {
+    /* TODO: Should I have this or not? */
+    /* background: rgb(0 0 0 / 0%);; */
+}
+
+section#splash {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+    section#splash video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        -ms-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
+        z-index: -1;
+    }
+
+    section#splash article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+        section#splash article h1 {
+            margin: 12px;
+            padding: 0;
+            line-height: 1;
+            font-weight: 300;
+        }
+        
+        section#splash article blockquote {
+            margin: 12px;
+            padding: 0;
+            line-height: 1;
+            font-weight: 300;
+            font-style: italic;
+            font-size: 0.6rem;
+        }
+
+    section#splash nav {
+        margin: 12px;
+        padding: 18px;
+        display: flex;
+        align-items: center;
+        background-color: white;
+    }
+
+        section#splash nav a {
+            margin-left: 18px;
+            margin-right: 18px;
+            color: black;
+            font-size: 0.3rem;
+            font-weight: 100;
+            text-transform: uppercase;
+            text-decoration: none;
+            position: relative;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        section#splash nav a:hover {
+            transform: translateY(-3px);
+        }
+
+        section#splash nav a::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            bottom: -5px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: var(--colour-accent-light);
+            transform: scaleY(0);
+            transform-origin: bottom;
+            transition: transform 0.3s ease;    
+        }
+    
+        section#splash nav a:hover::before {
+            transform: scaleY(1);
+        }
+
+section#intro {
+    height: 100vh;
+    background-color: white;
+}
