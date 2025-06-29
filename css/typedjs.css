@@ -1,0 +1,10 @@
+/* Overrides for the typedJS classes */
+/* Cursor */
+.typed-cursor {
+    display: none !important;
+}
+
+/* If fade out option is set */
+.typed-fade-out {
+    display: none !important;
+}

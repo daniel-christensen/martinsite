@@ -17,29 +17,39 @@
     --bp-tablet: 768px;
 }
 
-html {
+/* html {
     font-family: "Merriweather", serif;
     font-optical-sizing: auto;
     font-style: normal;
     font-weight: 300;
     font-variation-settings: "wdth" 100;
     font-size: 3rem;
-}
+} */
 
-body {
+/* body {
     display: flex;
     flex-direction: column;
-}
+} */
 
-hr.solid {
+/* hr.solid {
     border-top-width: 3px;
     border-top-style: solid;
     border-color: var(--colour-accent-light);
     border-radius: 80px;
     width: 100%;
-}
+} */
 
-.full-screen-container {
+
+
+
+
+
+
+/* 
+Allows me to create a div of the same height of the current viewport.
+Extremely useful for showing fixed backgrounds or images as a full page.
+*/
+.full-viewport-container {
     height: 100vh;
     overflow: hidden;
 }
@@ -52,49 +62,141 @@ hr.solid {
 section#splash {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
     justify-content: center;
 }
 
     section#splash video {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        -webkit-transform: translateX(-50%) translateY(-50%);
-        -ms-transform: translateX(-50%) translateY(-50%);
-        transform: translateX(-50%) translateY(-50%);
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover; /* This crops the video to fit */
+        position: fixed;
+        top: 0;
+        left: 0;
         z-index: -1;
     }
 
-    section#splash article {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    /*
+    The main splash title div
+    The text within is controlled by the TypedJS JavaScript
+    */
+    section#splash article h1 {
+        /* 
+        TypedJS writes out the title.
+        Without explicitly defining the title we get a div
+        which changes it's shape as the animation plays.
+
+        This value was manually discovered from webtools.
+        So if font-size changes, this needs to be re-evaluated.
+        */
+        height: 153px;
+
+        font-family: "Instrument Serif", serif;
+        font-weight: 500;
+        font-style: normal;
+        font-size: 4rem;
     }
 
+    @media (min-width: 576px) {
         section#splash article h1 {
-            margin: 12px;
-            padding: 0;
-            line-height: 1;
-            font-weight: 300;
+            height: 153px;
+            font-size: 4rem;
         }
-        
+    }
+
+    @media (min-width: 768px) {
+        section#splash article h1 {
+            height: 192px;
+            font-size: 5rem;
+        }
+    }
+
+    @media (min-width: 992px) {
+        section#splash article h1 {
+            height: 230px;
+            font-size: 6rem;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        section#splash article h1 {
+            height: 268px;
+            font-size: 7rem;
+        }
+    }
+
+    @media (min-width: 1400px) {
+        section#splash article h1 {
+            height: 300px;
+            font-size: 8rem;
+        }
+    }
+
+    /*
+    The small block quote on the splash screen
+    */
+    section#splash article blockquote {
+        font-family: "Instrument Serif", serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1.1rem;
+    }
+
+    @media (min-width: 576px) {
         section#splash article blockquote {
-            margin: 12px;
-            padding: 0;
-            line-height: 1;
-            font-weight: 300;
-            font-style: italic;
-            font-size: 0.6rem;
+            font-size: 1.1rem;
+        }
+    }
+
+    @media (min-width: 768px) {
+        section#splash article blockquote {
+            font-size: 1.3rem;
+        }
+    }
+
+    @media (min-width: 992px) {
+        section#splash article blockquote {
+            font-size: 1.5rem;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        section#splash article blockquote {
+            font-size: 1.8rem;
+        }
+    }
+
+    @media (min-width: 1400px) {
+        section#splash article blockquote {
+            font-size: 2rem;
+        }
+    }
+    
+    section#splash nav {
+        /* display: flex;
+        align-items: center;
+        justify-content: space-between; */
+    }
+
+        /*
+        Minor reminder that customising shoelace components
+        requires ::part 
+        */
+        section#splash nav .splash-nav-button::part(base) {
+            font-family: "Merriweather", serif;
+            font-weight: 200;
+            font-style: normal;
+            font-size: 1.2rem;
+
+            padding: 8px;
+            color: white;
+            background-color: var(--colour-accent-dark);
+            border-radius: 0;
+            border-color: var(--colour-accent-dark);
         }
 
-    section#splash nav {
-        margin: 12px;
-        padding: 18px;
-        display: flex;
-        align-items: center;
-        background-color: white;
-    }
+    /*
+
 
         section#splash nav a {
             margin-left: 18px;
@@ -129,9 +231,93 @@ section#splash {
     
         section#splash nav a:hover::before {
             transform: scaleY(1);
-        }
+        } */
 
 section#intro {
-    height: 100vh;
     background-color: white;
+
+    font-family: "Merriweather", serif;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 1.2rem;
+}
+
+
+/********************************************* 
+Utilities not tied to anything specific 
+**********************************************/
+.fade-in {
+    opacity: 0;
+    transition: background-color 0.5s ease;
+    animation: fadeIn 1s ease-in forwards;
+}
+
+    .fade-in:nth-child(1) {
+        animation-delay: 3s;
+    }
+
+    .fade-in:nth-child(2) {
+        animation-delay: 3.2s;
+    }
+
+    .fade-in:nth-child(3) {
+        animation-delay: 3.4s;
+    }
+
+    .fade-in:nth-child(4) {
+        animation-delay: 3.6s;
+    }
+
+    .fade-in:nth-child(5) {
+        animation-delay: 3.8s;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+.quote-box {
+    position: relative;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+}
+  
+    .quote-box::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-width: 10px;
+        border-style: solid;
+        border-color: var(--colour-accent-light);
+        clip-path: polygon(
+            /* Bottom left corner L shape */
+            0 calc(100% - 60px), 60px calc(100% - 60px), 60px 100%, 0 100%, 0 calc(100% - 60px),
+            
+            /* Top right corner L shape */
+            calc(100% - 60px) 0, 100% 0, 100% 60px, calc(100% - 60px) 60px, calc(100% - 60px) 0
+        );
+    }
+
+.standard-button::part(base) {
+    font-family: "Merriweather", serif;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 1.2rem;
+
+    padding: 8px;
+    color: white;
+    background-color: var(--colour-accent-dark);
+    border-radius: 0;
+    border-color: var(--colour-accent-dark);
 }

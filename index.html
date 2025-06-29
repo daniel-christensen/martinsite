@@ -1,39 +1,125 @@
 <!DOCTYPE html>
 <html lang="hu">
     <head>
+        <!-- Import metadata that should be left alone -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <!-- Title of the page (to be displayed in the tab) -->
         <title>IN DEVELOPMENT</title>
+
+        <!-- Google font link for allows Merriweather and Instrument Serif fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+        
+        <!-- Page icon -->
         <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-        <link rel="stylesheet" href="css/modern-normalize.css">
+        
+        <!-- Bootstrap 5 Link -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        
+        <!-- Shoelace for better looking components -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css" />
+
+        <!-- TypedJS CSS Overrides -->
+        <link rel="stylesheet" href="css/typedjs.css">
+
+        <!-- My custom CSS -->
         <link rel="stylesheet" href="css/site.css">
     </head>
     <body>
-
-        <section id="splash" class="full-screen-container opacity-layer">
+        <section id="splash" class="full-viewport-container opacity-layer container-sm">
             <video autoplay loop muted>
-                <source src="video/splash.webm" type="video/webm" />
+                <source src="video/new-splash.mp4" type="video/webm" />
             </video>
             <article>
-                <h1>Martin Mental Tréning</h1>
-                <hr class="solid" />
+                <h1 id="page-title"></h1>
+                <hr />
                 <blockquote>Az élet a komfortzónád határán kezdődik</blockquote>
             </article>
-            <nav>
-                <a href="/">Rólam</a>
-                <a href="/">Szolgáltatásaim</a>
-                <a href="/">Online tréningek</a>
-                <a href="/">Kapcsolat</a>
+            <nav class="d-flex flex-wrap justify-content-between gap-2">
+                <div class="fade-in">
+                    <sl-button href="/" class="splash-nav-button">
+                        Vélemények
+                    </sl-button>
+                </div>
+                <div class="fade-in">
+                    <sl-button href="/" class="splash-nav-button">
+                        Szolgáltatásaim
+                    </sl-button>
+                </div>
+                <div class="fade-in">
+                    <sl-button href="/" class="splash-nav-button">
+                        Az első lépes
+                    </sl-button>
+                </div>
+                <div class="fade-in">
+                    <sl-button href="/" class="splash-nav-button">
+                        Fókuszban
+                    </sl-button>
+                </div>
+                <div class="fade-in">
+                    <sl-button href="/" class="splash-nav-button">
+                        Kapcsolat
+                    </sl-button>
+                </div>
             </nav>
         </section>
 
         <section id="intro">
-            Next Section
+            <div class="container-sm py-5">
+                <div class="row">
+                    <div class="col-lg-6 d-flex justify-content-center">
+                        <img src="images/martin-1-full.JPG" width="400px" />
+                    </div>
+                    <div class="col-lg-6 d-flex justify-content-center">
+                        <div class="quote-box">
+                            <p>
+                                Szia!<br>
+                                Cserpnyák Martin vagyok, sport mentál- és 
+                                csapatépítő tréner.
+                            </p>
+                            <p>
+                                Világ- és Európa bajnokként szeretnélek segíteni 
+                                abban, hogy az álmaid a valóságoddá váljanak. 
+                            </p>
+                            <p>
+                                Sok valós tapasztalattal rendelkezem, hiszen 10 
+                                éven keresztül szerepeltem a magyar teke utánpótlás 
+                                válogatottjaiban, illetve klubszinten a Bajnokok Ligáját 
+                                is megjártam. Ezen évek alatt pedig rengeteget 
+                                tapasztaltam és tanultam az élsport kihívásairól.
+                            </p>
+                            <div class="d-flex justify-content-center 
+                                align-items-center h-100">
+                                <sl-button class="standard-button">
+                                    Kapcsolatfelvétel
+                                </sl-button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
-
     </body>
+
+    <!-- The bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Shoelace Autoloader -->
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"></script>
+
+    <!-- TypedJS script for typing effect -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <!-- Hooking into TypedJS and setting it up for the page -->
+    <script>
+        var typed = new Typed('#page-title', {
+            strings: ['Cserpnyák<br>Martin'],
+            typeSpeed: 100,
+        });
+    </script>
 </html>
