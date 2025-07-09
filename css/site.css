@@ -1,323 +1,1011 @@
-:root {
-    /* Palette Origin: https://mycolor.space/?hex=%233B444B&sub=1 */
-    --colour-primary: #3b444b;
-    --colour-secondary: #88b0cd;
-    --colour-tertiary: #687987;
-    --colour-accent-dark: #543c4a;
-    --colour-accent-light: #866b7b;
+    :root {
+        /* Palette Origin: https://mycolor.space/?hex=%233B444B&sub=1 */
+        --colour-primary: #3b444b;
+        --colour-secondary: #88b0cd;
+        --colour-tertiary: #687987;
+        --colour-accent-dark: #543c4a;
+        --colour-accent-light: #866b7b;
 
-    /* TODO: Nice colour instead of white backgrounds. */
-    /* #d4d3d1 */
+        /* TODO: Nice colour instead of white backgrounds. */
+        /* #d4d3d1 */
 
-    /* Sizes */
-    --width-lg: 1400px;
+        /* Sizes */
+        --width-lg: 1400px;
 
-    /* Break points */
-    --bp-mobile: 480px;
-    --bp-tablet: 768px;
-}
+        /* Break points */
+        --bp-mobile: 480px;
+        --bp-tablet: 768px;
+    }
 
-/* html {
-    font-family: "Merriweather", serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    font-weight: 300;
-    font-variation-settings: "wdth" 100;
-    font-size: 3rem;
-} */
+    /* html {
+        font-family: "Merriweather", serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        font-weight: 300;
+        font-variation-settings: "wdth" 100;
+        font-size: 3rem;
+    } */
 
-/* body {
-    display: flex;
-    flex-direction: column;
-} */
+    /* body {
+        display: flex;
+        flex-direction: column;
+    } */
 
-/* hr.solid {
-    border-top-width: 3px;
-    border-top-style: solid;
-    border-color: var(--colour-accent-light);
-    border-radius: 80px;
-    width: 100%;
-} */
-
-
+    /* hr.solid {
+        border-top-width: 3px;
+        border-top-style: solid;
+        border-color: var(--colour-accent-light);
+        border-radius: 80px;
+        width: 100%;
+    } */
 
 
 
 
 
-/* 
-Allows me to create a div of the same height of the current viewport.
-Extremely useful for showing fixed backgrounds or images as a full page.
-*/
-.full-viewport-container {
-    height: 100vh;
-    overflow: hidden;
-}
 
-.opacity-layer {
-    /* TODO: Should I have this or not? */
-    /* background: rgb(0 0 0 / 0%);; */
-}
 
-section#splash {
-    display: flex;
-    flex-direction: column;
-    /* align-items: center; */
-    justify-content: center;
-}
-
-    section#splash video {
-        width: 100vw;
+    /* 
+    Allows me to create a div of the same height of the current viewport.
+    Extremely useful for showing fixed backgrounds or images as a full page.
+    */
+    .full-viewport-container {
         height: 100vh;
-        object-fit: cover; /* This crops the video to fit */
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: -1;
+        overflow: hidden;
     }
 
-    /*
-    The main splash title div
-    The text within is controlled by the TypedJS JavaScript
-    */
-    section#splash article h1 {
-        /* 
-        TypedJS writes out the title.
-        Without explicitly defining the title we get a div
-        which changes it's shape as the animation plays.
-
-        This value was manually discovered from webtools.
-        So if font-size changes, this needs to be re-evaluated.
-        */
-        height: 153px;
-
-        font-family: "Instrument Serif", serif;
-        font-weight: 500;
-        font-style: normal;
-        font-size: 4rem;
+    .opacity-layer {
+        /* TODO: Should I have this or not? */
+        /* background: rgb(0 0 0 / 0%);; */
     }
 
-    @media (min-width: 576px) {
-        section#splash article h1 {
-            height: 153px;
-            font-size: 4rem;
+    section#splash {
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+        justify-content: center;
+    }
+
+        section#splash video {
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover; /* This crops the video to fit */
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
         }
-    }
-
-    @media (min-width: 768px) {
-        section#splash article h1 {
-            height: 192px;
-            font-size: 5rem;
-        }
-    }
-
-    @media (min-width: 992px) {
-        section#splash article h1 {
-            height: 230px;
-            font-size: 6rem;
-        }
-    }
-
-    @media (min-width: 1200px) {
-        section#splash article h1 {
-            height: 268px;
-            font-size: 7rem;
-        }
-    }
-
-    @media (min-width: 1400px) {
-        section#splash article h1 {
-            height: 300px;
-            font-size: 8rem;
-        }
-    }
-
-    /*
-    The small block quote on the splash screen
-    */
-    section#splash article blockquote {
-        font-family: "Instrument Serif", serif;
-        font-weight: 400;
-        font-style: normal;
-        font-size: 1.1rem;
-    }
-
-    @media (min-width: 576px) {
-        section#splash article blockquote {
-            font-size: 1.1rem;
-        }
-    }
-
-    @media (min-width: 768px) {
-        section#splash article blockquote {
-            font-size: 1.3rem;
-        }
-    }
-
-    @media (min-width: 992px) {
-        section#splash article blockquote {
-            font-size: 1.5rem;
-        }
-    }
-
-    @media (min-width: 1200px) {
-        section#splash article blockquote {
-            font-size: 1.8rem;
-        }
-    }
-
-    @media (min-width: 1400px) {
-        section#splash article blockquote {
-            font-size: 2rem;
-        }
-    }
-    
-    section#splash nav {
-        /* display: flex;
-        align-items: center;
-        justify-content: space-between; */
-    }
 
         /*
-        Minor reminder that customising shoelace components
-        requires ::part 
+        The main splash title div
+        The text within is controlled by the TypedJS JavaScript
         */
-        section#splash nav .splash-nav-button::part(base) {
-            font-family: "Merriweather", serif;
-            font-weight: 200;
+        section#splash article h1 {
+            /* 
+            TypedJS writes out the title.
+            Without explicitly defining the title we get a div
+            which changes it's shape as the animation plays.
+
+            This value was manually discovered from webtools.
+            So if font-size changes, this needs to be re-evaluated.
+            */
+            height: 153px;
+
+            font-family: "Instrument Serif", serif;
+            font-weight: 500;
             font-style: normal;
-            font-size: 1.2rem;
-
-            padding: 8px;
-            color: white;
-            background-color: var(--colour-accent-dark);
-            border-radius: 0;
-            border-color: var(--colour-accent-dark);
+            font-size: 4rem;
         }
 
-    /*
-
-
-        section#splash nav a {
-            margin-left: 18px;
-            margin-right: 18px;
-            color: black;
-            font-size: 0.3rem;
-            font-weight: 100;
-            text-transform: uppercase;
-            text-decoration: none;
-            position: relative;
-            display: inline-block;
-            transition: all 0.3s ease;
+        @media (min-width: 576px) {
+            section#splash article h1 {
+                height: 153px;
+                font-size: 4rem;
+            }
         }
 
-        section#splash nav a:hover {
-            transform: translateY(-3px);
+        @media (min-width: 768px) {
+            section#splash article h1 {
+                height: 192px;
+                font-size: 5rem;
+            }
         }
 
-        section#splash nav a::before {
-            content: "";
+        @media (min-width: 992px) {
+            section#splash article h1 {
+                height: 230px;
+                font-size: 6rem;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            section#splash article h1 {
+                height: 268px;
+                font-size: 7rem;
+            }
+        }
+
+        @media (min-width: 1400px) {
+            section#splash article h1 {
+                height: 300px;
+                font-size: 8rem;
+            }
+        }
+
+        /*
+        The small block quote on the splash screen
+        */
+        section#splash article blockquote {
+            font-family: "Instrument Serif", serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 1.1rem;
+        }
+
+        @media (min-width: 576px) {
+            section#splash article blockquote {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            section#splash article blockquote {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (min-width: 992px) {
+            section#splash article blockquote {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            section#splash article blockquote {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (min-width: 1400px) {
+            section#splash article blockquote {
+                font-size: 2rem;
+            }
+        }
+        
+        section#splash nav {
+            /* display: flex;
+            align-items: center;
+            justify-content: space-between; */
+        }
+
+            /*
+            Minor reminder that customising shoelace components
+            requires ::part 
+            */
+            section#splash nav .splash-nav-button::part(base) {
+                font-family: "Merriweather", serif;
+                font-weight: 200;
+                font-style: normal;
+                font-size: 1.2rem;
+
+                padding: 8px;
+                color: white;
+                background-color: var(--colour-accent-dark);
+                border-radius: 0;
+                border-color: var(--colour-accent-dark);
+            }
+
+        /*
+
+
+            section#splash nav a {
+                margin-left: 18px;
+                margin-right: 18px;
+                color: black;
+                font-size: 0.3rem;
+                font-weight: 100;
+                text-transform: uppercase;
+                text-decoration: none;
+                position: relative;
+                display: inline-block;
+                transition: all 0.3s ease;
+            }
+
+            section#splash nav a:hover {
+                transform: translateY(-3px);
+            }
+
+            section#splash nav a::before {
+                content: "";
+                position: absolute;
+                z-index: -1;
+                bottom: -5px;
+                left: 0;
+                right: 0;
+                height: 2px;
+                background-color: var(--colour-accent-light);
+                transform: scaleY(0);
+                transform-origin: bottom;
+                transition: transform 0.3s ease;    
+            }
+        
+            section#splash nav a:hover::before {
+                transform: scaleY(1);
+            } */
+
+    section#intro {
+        background-color: white;
+
+        font-family: "Merriweather", serif;
+        font-weight: 200;
+        font-style: normal;
+        font-size: 1.2rem;
+    }
+
+
+    /********************************************* 
+    Utilities not tied to anything specific 
+    **********************************************/
+    .fade-in {
+        opacity: 0;
+        transition: background-color 0.5s ease;
+        animation: fadeIn 1s ease-in forwards;
+    }
+
+        .fade-in:nth-child(1) {
+            animation-delay: 3s;
+        }
+
+        .fade-in:nth-child(2) {
+            animation-delay: 3.2s;
+        }
+
+        .fade-in:nth-child(3) {
+            animation-delay: 3.4s;
+        }
+
+        .fade-in:nth-child(4) {
+            animation-delay: 3.6s;
+        }
+
+        .fade-in:nth-child(5) {
+            animation-delay: 3.8s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+    .quote-box {
+        position: relative;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+        .quote-box::before {
+            content: '';
             position: absolute;
-            z-index: -1;
-            bottom: -5px;
+            top: 0;
             left: 0;
             right: 0;
-            height: 2px;
-            background-color: var(--colour-accent-light);
-            transform: scaleY(0);
-            transform-origin: bottom;
-            transition: transform 0.3s ease;    
+            bottom: 0;
+            border-width: 10px;
+            border-style: solid;
+            border-color: var(--colour-accent-light);
+            clip-path: polygon(
+                /* Bottom left corner L shape */
+                0 calc(100% - 60px), 60px calc(100% - 60px), 60px 100%, 0 100%, 0 calc(100% - 60px),
+                
+                /* Top right corner L shape */
+                calc(100% - 60px) 0, 100% 0, 100% 60px, calc(100% - 60px) 60px, calc(100% - 60px) 0
+            );
         }
-    
-        section#splash nav a:hover::before {
-            transform: scaleY(1);
-        } */
 
-section#intro {
-    background-color: white;
+    .standard-button::part(base) {
+        font-family: "Merriweather", serif;
+        font-weight: 200;
+        font-style: normal;
+        font-size: 1.2rem;
 
+        padding: 8px;
+        color: white;
+        background-color: var(--colour-accent-dark);
+        border-radius: 0;
+        border-color: var(--colour-accent-dark);
+    }
+
+section#focus {
+    background-color: #f8f9fa;
     font-family: "Merriweather", serif;
     font-weight: 200;
     font-style: normal;
-    font-size: 1.2rem;
 }
 
-
-/********************************************* 
-Utilities not tied to anything specific 
-**********************************************/
-.fade-in {
-    opacity: 0;
-    transition: background-color 0.5s ease;
-    animation: fadeIn 1s ease-in forwards;
-}
-
-    .fade-in:nth-child(1) {
-        animation-delay: 3s;
+    section#focus .focus-title {
+        font-family: "Instrument Serif", serif;
+        font-weight: 500;
+        font-style: normal;
+        font-size: 2.5rem;
+        color: var(--colour-primary);
+        margin-bottom: 2rem;
     }
 
-    .fade-in:nth-child(2) {
-        animation-delay: 3.2s;
-    }
-
-    .fade-in:nth-child(3) {
-        animation-delay: 3.4s;
-    }
-
-    .fade-in:nth-child(4) {
-        animation-delay: 3.6s;
-    }
-
-    .fade-in:nth-child(5) {
-        animation-delay: 3.8s;
-    }
-
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
+    @media (min-width: 768px) {
+        section#focus .focus-title {
+            font-size: 3rem;
         }
     }
 
-.quote-box {
-    position: relative;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-}
-  
-    .quote-box::before {
+    @media (min-width: 992px) {
+        section#focus .focus-title {
+            font-size: 3.5rem;
+        }
+    }
+
+    section#focus .focus-subtitle {
+        font-size: 1.1rem;
+        color: var(--colour-tertiary);
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.6;
+    }
+
+    @media (min-width: 768px) {
+        section#focus .focus-subtitle {
+            font-size: 1.2rem;
+        }
+    }
+
+    section#focus .focus-points {
+        background-color: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: relative;
+    }
+
+    section#focus .focus-points::before {
         content: '';
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        border-width: 10px;
+        border-width: 3px;
         border-style: solid;
         border-color: var(--colour-accent-light);
+        border-radius: 8px;
         clip-path: polygon(
             /* Bottom left corner L shape */
-            0 calc(100% - 60px), 60px calc(100% - 60px), 60px 100%, 0 100%, 0 calc(100% - 60px),
+            0 calc(100% - 30px), 30px calc(100% - 30px), 30px 100%, 0 100%, 0 calc(100% - 30px),
             
             /* Top right corner L shape */
-            calc(100% - 60px) 0, 100% 0, 100% 60px, calc(100% - 60px) 60px, calc(100% - 60px) 0
+            calc(100% - 30px) 0, 100% 0, 100% 30px, calc(100% - 30px) 30px, calc(100% - 30px) 0
         );
     }
 
-.standard-button::part(base) {
+    section#focus .focus-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    section#focus .focus-list li {
+        padding: 0.8rem 0;
+        border-bottom: 1px solid #e9ecef;
+        font-size: 1.1rem;
+        line-height: 1.5;
+        position: relative;
+        padding-left: 1.5rem;
+    }
+
+    section#focus .focus-list li:last-child {
+        border-bottom: none;
+    }
+
+    section#focus .focus-list li::before {
+        content: '•';
+        color: var(--colour-accent-dark);
+        font-weight: bold;
+        font-size: 1.2rem;
+        position: absolute;
+        left: 0;
+        top: 0.8rem;
+    }
+
+    @media (min-width: 768px) {
+        section#focus .focus-list li {
+            font-size: 1.2rem;
+        }
+    }
+
+section#process {
+    background-color: white;
+
     font-family: "Merriweather", serif;
     font-weight: 200;
     font-style: normal;
-    font-size: 1.2rem;
-
-    padding: 8px;
     color: white;
-    background-color: var(--colour-accent-dark);
-    border-radius: 0;
-    border-color: var(--colour-accent-dark);
+}
+
+    section#process .process-title {
+        font-family: "Instrument Serif", serif;
+        font-weight: 500;
+        font-style: normal;
+        font-size: 2.5rem;
+        color: var(--colour-primary);
+        margin-bottom: 2rem;
+    }
+
+    @media (min-width: 768px) {
+        section#process .process-title {
+            font-size: 3rem;
+        }
+    }
+
+    @media (min-width: 992px) {
+        section#process .process-title {
+            font-size: 3.5rem;
+        }
+    }
+
+    section#process .process-intro {
+        font-size: 1.3rem;
+        color: var(--colour-tertiary);
+        margin-bottom: 0;
+        font-style: italic;
+    }
+
+    @media (min-width: 768px) {
+        section#process .process-intro {
+            font-size: 1.5rem;
+        }
+    }
+
+    section#process .process-accordion {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+        backdrop-filter: blur(5px);
+    }
+
+    section#process .accordion-header {
+        padding: 1.5rem 2rem;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: all 0.3s ease;
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    section#process .accordion-header:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    section#process .accordion-header.active {
+        background-color: rgba(255, 255, 255, 0.15);
+    }
+
+    section#process .accordion-header h3 {
+        margin: 0;
+        font-size: 1.2rem;
+        font-weight: 400;
+        color: var(--colour-primary);
+    }
+
+    @media (min-width: 768px) {
+        section#process .accordion-header h3 {
+            font-size: 1.4rem;
+        }
+    }
+
+    section#process .accordion-icon {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: var(--colour-secondary);
+        transition: transform 0.3s ease;
+        min-width: 20px;
+        text-align: center;
+    }
+
+    section#process .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    section#process .accordion-content p {
+        padding: 1.5rem 2rem;
+        margin: 0;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: var(--colour-tertiary);
+    }
+
+    @media (min-width: 768px) {
+        section#process .accordion-content p {
+            font-size: 1.2rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        section#process .accordion-header {
+            padding: 1.2rem 1.5rem;
+        }
+        
+        section#process .accordion-content p {
+            padding: 1.2rem 1.5rem;
+        }
+    }
+
+section#services {
+    background-color: #f8f9fa;
+    font-family: "Merriweather", serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
+    section#services .services-title {
+        font-family: "Instrument Serif", serif;
+        font-weight: 500;
+        font-style: normal;
+        font-size: 2.5rem;
+        color: var(--colour-primary);
+        margin-bottom: 2rem;
+    }
+
+    @media (min-width: 768px) {
+        section#services .services-title {
+            font-size: 3rem;
+        }
+    }
+
+    @media (min-width: 992px) {
+        section#services .services-title {
+            font-size: 3.5rem;
+        }
+    }
+
+    section#services .service-card {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    section#services .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    section#services .service-image {
+        height: 200px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    section#services .service-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    section#services .service-card:hover .service-image img {
+        transform: scale(1.05);
+    }
+
+    section#services .service-content {
+        padding: 2rem;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    section#services .service-title {
+        font-family: "Instrument Serif", serif;
+        font-weight: 500;
+        font-size: 1.5rem;
+        color: var(--colour-primary);
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+
+    section#services .service-details {
+        margin-bottom: 1.5rem;
+        padding: 1rem;
+        background-color: #f8f9fa;
+        border-radius: 6px;
+        border-left: 4px solid var(--colour-accent-light);
+    }
+
+    section#services .service-detail-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.3rem 0;
+        font-size: 0.95rem;
+        border-bottom: 1px solid #e9ecef;
+    }
+
+    section#services .service-detail-item:last-child {
+        border-bottom: none;
+    }
+
+    section#services .service-detail-item strong {
+        color: var(--colour-tertiary);
+        font-weight: 400;
+    }
+
+    section#services .service-description {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    section#services .service-description p {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: var(--colour-tertiary);
+        margin-bottom: 1rem;
+    }
+
+    section#services .service-description p:last-child {
+        margin-bottom: 0;
+    }
+
+    /* Ensure equal height cards on larger screens */
+    @media (min-width: 768px) {
+        section#services .row {
+            display: flex;
+            align-items: stretch;
+        }
+        
+        section#services .service-card {
+            height: 100%;
+        }
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        section#services .service-content {
+            padding: 1.5rem;
+        }
+        
+        section#services .service-title {
+            font-size: 1.3rem;
+        }
+    }
+
+section#contact {
+    background: linear-gradient(135deg, var(--colour-primary) 0%, var(--colour-tertiary) 100%);
+    font-family: "Merriweather", serif;
+    font-weight: 200;
+    font-style: normal;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+    section#contact::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.08)"/><circle cx="40" cy="60" r="1" fill="rgba(255,255,255,0.06)"/><circle cx="70" cy="80" r="2.5" fill="rgba(255,255,255,0.1)"/><circle cx="10" cy="70" r="1.2" fill="rgba(255,255,255,0.07)"/></svg>');
+        animation: float 20s ease-in-out infinite;
+        pointer-events: none;
+    }
+
+    @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-20px); }
+    }
+
+    section#contact .contact-title {
+        font-family: "Instrument Serif", serif;
+        font-weight: 500;
+        font-style: normal;
+        font-size: 2.5rem;
+        color: white;
+        margin-bottom: 1rem;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    @media (min-width: 768px) {
+        section#contact .contact-title {
+            font-size: 3rem;
+        }
+    }
+
+    @media (min-width: 992px) {
+        section#contact .contact-title {
+            font-size: 3.5rem;
+        }
+    }
+
+    section#contact .contact-subtitle {
+        font-size: 1.2rem;
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 0;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.6;
+    }
+
+    @media (min-width: 768px) {
+        section#contact .contact-subtitle {
+            font-size: 1.3rem;
+        }
+    }
+
+    section#contact .contact-form-container {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        border-radius: 16px;
+        padding: 3rem;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        position: relative;
+        z-index: 1;
+    }
+
+    @media (max-width: 768px) {
+        section#contact .contact-form-container {
+            padding: 2rem;
+        }
+    }
+
+    section#contact .form-label {
+        color: white;
+        font-weight: 300;
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+        display: block;
+    }
+
+    section#contact .contact-input {
+        background: rgba(255, 255, 255, 0.9);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        border-radius: 8px;
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+        color: var(--colour-primary);
+        transition: all 0.3s ease;
+        font-family: "Merriweather", serif;
+        font-weight: 200;
+    }
+
+    section#contact .contact-input:focus {
+        outline: none;
+        border-color: var(--colour-secondary);
+        background: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 0 0 0.2rem rgba(136, 176, 205, 0.3);
+        transform: translateY(-1px);
+    }
+
+    section#contact .contact-input::placeholder {
+        color: rgba(59, 68, 75, 0.6);
+        font-style: italic;
+    }
+
+    section#contact .contact-submit-button::part(base) {
+        font-family: "Merriweather", serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 1.3rem;
+        
+        padding: 1rem 3rem;
+        color: var(--colour-primary);
+        background: linear-gradient(135deg, var(--colour-secondary) 0%, rgba(255, 255, 255, 0.9) 100%);
+        border-radius: 25px;
+        border: none;
+        transition: all 0.3s ease;
+        text-transform: none;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    section#contact .contact-submit-button::part(base):hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, var(--colour-secondary) 100%);
+    }
+
+    section#contact .contact-submit-button::part(base):active {
+        transform: translateY(0);
+    }
+
+footer#footer {
+    position: relative;
+    background: white;
+    font-family: "Merriweather", serif;
+    font-weight: 200;
+    font-style: normal;
+    padding-bottom: 30px;
+}
+
+.footer-gradient-transition {
+    height: 100px;
+    background: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-gradient-transition::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.08)"/><circle cx="40" cy="60" r="1" fill="rgba(255,255,255,0.06)"/><circle cx="70" cy="80" r="2.5" fill="rgba(255,255,255,0.1)"/><circle cx="10" cy="70" r="1.2" fill="rgba(255,255,255,0.07)"/></svg>');
+    animation: float 20s ease-in-out infinite reverse;
+    pointer-events: none;
+    opacity: 0.3;
+}
+
+.footer-brand {
+    margin-bottom: 2rem;
+}
+
+.logo-placeholder {
+    font-family: "Instrument Serif", serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: var(--colour-primary);
+    padding: 1rem;
+    border: 2px dashed var(--colour-accent-light);
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 1rem;
+    background: rgba(136, 176, 205, 0.1);
+}
+
+.footer-description {
+    font-size: 1rem;
+    color: var(--colour-tertiary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.footer-title {
+    font-family: "Instrument Serif", serif;
+    font-weight: 500;
+    font-size: 1.3rem;
+    color: var(--colour-primary);
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.footer-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: var(--colour-accent-light);
+    border-radius: 2px;
+}
+
+.footer-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-nav li {
+    margin-bottom: 0.75rem;
+}
+
+.footer-nav a {
+    color: var(--colour-tertiary);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+}
+
+.footer-nav a::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background: var(--colour-accent-light);
+    transition: width 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color: var(--colour-primary);
+    transform: translateX(5px);
+}
+
+.footer-nav a:hover::before {
+    width: 100%;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: rgba(136, 176, 205, 0.1);
+    border: 2px solid var(--colour-accent-light);
+    border-radius: 50%;
+    color: var(--colour-tertiary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background: var(--colour-accent-light);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(136, 176, 205, 0.3);
+}
+
+.social-link svg {
+    width: 20px;
+    height: 20px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #e9ecef;
+    margin-top: 2rem;
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: var(--colour-tertiary);
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .footer-gradient-transition {
+        height: 60px;
+    }
+    
+    .footer-brand,
+    .footer-title {
+        text-align: center;
+    }
+    
+    .social-links {
+        justify-content: center;
+        margin-top: 1rem;
+    }
+    
+    .footer-nav {
+        text-align: center;
+    }
 }
